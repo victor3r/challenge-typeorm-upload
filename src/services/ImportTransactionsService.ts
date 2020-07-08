@@ -5,8 +5,6 @@ import fs from 'fs';
 import Transaction from '../models/Transaction';
 import Category from '../models/Category';
 
-import AppError from '../errors/AppError';
-
 import TransactionsRepository from '../repositories/TransactionsRepository';
 
 interface Request {

@@ -28,11 +28,11 @@ class TransactionsRepository extends Repository<Transaction> {
       (accumulator, transaction) => {
         switch (transaction.type) {
           case 'income':
-            accumulator.income += transaction.value;
+            accumulator.income += Number(transaction.value);
             break;
 
           case 'outcome':
-            accumulator.outcome += transaction.value;
+            accumulator.outcome += Number(transaction.value);
             break;
 
           default:
@@ -62,7 +62,7 @@ class TransactionsRepository extends Repository<Transaction> {
     return transactions.map(transaction => ({
       id: transaction.id,
       title: transaction.title,
-      value: transaction.value,
+      value: Number(transaction.value),
       type: transaction.type,
       category: {
         id: transaction.category.id,
